@@ -137,6 +137,34 @@ public class exit_receipt extends javax.swing.JFrame {
 		catch(Exception e){}
         empty_tempe();
     }
+    void fill_record(){
+        String x1,x2,x3,x5,x6,x7;
+        int x4;
+        float x8;
+        x1=l1.getText();
+        x2=l2.getText();
+        x3=l3.getText();
+        x4=Integer.parseInt(l4.getText());
+        x5=l5.getText();
+        x6=l6.getText();
+        x7=l7.getText();
+        x8=Float.parseFloat(l8.getText());
+        try{
+            Class.forName("add your jdbc Driver ");
+            Connection ham=DriverManager.getConnection("add your connectin info");
+            PreparedStatement egg=ham.prepareStatement("insert record value(?,?,?,?,?,?,?,?)");
+            egg.setString(1, x1);
+            egg.setString(2, x2);
+            egg.setString(3, x3);
+            egg.setInt(4, x4);
+            egg.setString(5, x5);
+            egg.setString(6, x6);
+            egg.setString(7, x7);
+            egg.setFloat(8, x8);
+            egg.executeUpdate();
+        }
+        catch(Exception e){}  
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -250,6 +278,7 @@ public class exit_receipt extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new exit_form().setVisible(true);
+        fill_record();
         dispose();
         empty_table();
     }//GEN-LAST:event_jButton1ActionPerformed
