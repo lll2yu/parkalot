@@ -198,9 +198,24 @@ public class entry_form extends javax.swing.JFrame {
     ArrayList<Integer> list=new ArrayList<Integer>();
     ArrayList<Integer> two =new ArrayList<Integer>();
     void set_two(){
-        for(int i=1;i<=50;i++){
-            two.add(i);
+        get_i();
+        for(int j=1;j<=i;j++){
+            two.add(j);
         }
+    }
+    int i;
+    void get_i(){
+        ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select * from slots ");			
+ 				while (rlt.next()) {      
+  					 i=(Integer.parseInt(rlt.getString(1)));                                 
+				}
+		}
+		catch(Exception e){}
     }
 	void slot_sorter(){
             set_two();
