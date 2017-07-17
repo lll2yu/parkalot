@@ -158,8 +158,8 @@ public class exit_form extends javax.swing.JFrame {
         try{
             String s;
             s=jTextField1.getText();
-            Class.forName("org.mariadb.jdbc.Driver");
-            dum=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+            Class.forName("add your jdbc Driver");
+            dum=DriverManager.getConnection("add your connectin info");
             dang=dum.prepareStatement("insert into tempe(no) values ('"+s+"')");
             dang.executeUpdate();
             

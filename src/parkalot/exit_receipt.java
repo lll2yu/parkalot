@@ -34,8 +34,8 @@ public class exit_receipt extends javax.swing.JFrame {
     void get_temp(){
         ResultSet r;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection cs=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection cs=DriverManager.getConnection("add your connectin info");
 			Statement s=cs.createStatement();
 			r=s.executeQuery("Select * from tempe");
 			while(r.next()){
@@ -51,8 +51,8 @@ public class exit_receipt extends javax.swing.JFrame {
         get_temp();
         ResultSet result;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection c=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
 			result=stat.executeQuery("Select * from entry where reg_no='"+t+"'");
 			while(result.next()){
@@ -105,8 +105,8 @@ public class exit_receipt extends javax.swing.JFrame {
     void get_rates(){
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("select price from rates where name='"+lap+"'");
                         while(re.next()){
@@ -118,8 +118,8 @@ public class exit_receipt extends javax.swing.JFrame {
     void empty_tempe(){
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("delete from tempe");
 		}
@@ -129,8 +129,8 @@ public class exit_receipt extends javax.swing.JFrame {
         get_temp();
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("delete from entry where reg_no='"+t+"'");
 		}

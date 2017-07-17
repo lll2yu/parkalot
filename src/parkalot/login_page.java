@@ -123,8 +123,8 @@ public class login_page extends javax.swing.JFrame {
         x2=pf1.getText();
         ResultSet res;
         try{
-            Class.forName("org.mariadb.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+            Class.forName("add your jdbc Driver");
+            con=DriverManager.getConnection("add your connectin info");
             Statement stat=con.createStatement();
             res=stat.executeQuery("select pass from user_details where login='"+x1+"'");
             while(res.next()){

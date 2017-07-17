@@ -105,8 +105,8 @@ public class adduser extends javax.swing.JFrame {
     void set_newdetails(){
     ResultSet rep;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement see=ce.createStatement();
 			rep=see.executeQuery("insert into user_details(login,pass) values ('"+s1+"'"+","+"'"+s2+"'"+");");
 		}

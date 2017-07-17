@@ -206,8 +206,8 @@ public class entry_form extends javax.swing.JFrame {
             set_two();
         ResultSet rlt;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection c=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
 			rlt=stat.executeQuery("Select slot_no from entry ");			
  				while (rlt.next()) {      
@@ -250,8 +250,8 @@ public class entry_form extends javax.swing.JFrame {
             x5=ft.format(date);
             x6=fft.format(date);
         try{
-            Class.forName("org.mariadb.jdbc.Driver");
-            ham=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+            Class.forName("add your jdbc Driver");
+            ham=DriverManager.getConnection("add your connectin info");
             egg=ham.prepareStatement("insert entry value(?,?,?,?,?,?)");
             egg.setString(1, x1);
             egg.setString(2, x2);
@@ -273,8 +273,8 @@ public class entry_form extends javax.swing.JFrame {
     				sIs2 = sI2.toString();
                         }
         s=Integer.parseInt(sIs2);
-            Class.forName("org.mariadb.jdbc.Driver");
-            dum=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+            Class.forName("add your jdbc Driver");
+            dum=DriverManager.getConnection("add your connectin info");
             dang=dum.prepareStatement("insert into temp(no) values ("+s+")");
             dang.executeUpdate();
             

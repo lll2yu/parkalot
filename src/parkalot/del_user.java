@@ -50,7 +50,6 @@ public class del_user extends javax.swing.JFrame {
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
         jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
-        jDialog1.setPreferredSize(new java.awt.Dimension(350, 200));
         jDialog1.setResizable(false);
         jDialog1.getContentPane().setLayout(null);
 
@@ -137,8 +136,8 @@ public class del_user extends javax.swing.JFrame {
         s=jTextField1.getText();
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("delete from user_details where login='"+s+"'");
 		}

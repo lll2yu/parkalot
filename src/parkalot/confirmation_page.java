@@ -33,8 +33,8 @@ public class confirmation_page extends javax.swing.JFrame {
     void get_temp(){
         ResultSet r;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection cs=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection cs=DriverManager.getConnection("add your connectin info");
 			Statement s=cs.createStatement();
 			r=s.executeQuery("Select * from temp");
 			while(r.next()){
@@ -47,8 +47,8 @@ public class confirmation_page extends javax.swing.JFrame {
         get_temp();
         ResultSet result;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection c=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
 			result=stat.executeQuery("Select * from entry where slot_no="+t);
 			while(result.next()){
@@ -65,8 +65,8 @@ public class confirmation_page extends javax.swing.JFrame {
     void empty_temp(){
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("delete from temp");
             }

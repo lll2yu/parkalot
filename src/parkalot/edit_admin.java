@@ -131,8 +131,8 @@ String s1,s2;
     void empty_details(){
         ResultSet re;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
 			re=se.executeQuery("delete from admin_details");
 		}
@@ -141,8 +141,8 @@ String s1,s2;
     void set_newdetails(){
     ResultSet rep;
         try{
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection ce=DriverManager.getConnection("jdbc:mysql://localhost/parking", "root", "xmbc@541");
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement see=ce.createStatement();
 			rep=see.executeQuery("insert into admin_details(login,pass) values ('"+s1+"'"+","+"'"+s2+"'"+");");
 		}
