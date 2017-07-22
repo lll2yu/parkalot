@@ -19,6 +19,7 @@ package parkalot;
 /**
  *
  * @author lll2yu
+ * main class of the project
  */
 public class Parkalot {
     public static void main(String[] args) {

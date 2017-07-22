@@ -15,7 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package parkalot;
+/*
+    this class displays a splach screen for a set time 
 
+*/
 import java.awt.event.*;
 import javax.swing.Timer;
 
@@ -24,7 +27,8 @@ import javax.swing.Timer;
  * @author lll2yu
  */
 public class logo extends javax.swing.JFrame implements ActionListener{
-     Timer pause = new Timer(6000, this);
+    // amount of time for which logo is displayed can be changed here 
+    Timer pause = new Timer(6000, this);
     /**
      * Creates new form logo
      */
