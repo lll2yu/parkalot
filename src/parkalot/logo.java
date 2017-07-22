@@ -28,7 +28,7 @@ import javax.swing.Timer;
  */
 public class logo extends javax.swing.JFrame implements ActionListener{
     // amount of time for which logo is displayed can be changed here 
-    Timer pause = new Timer(6000, this);
+    Timer pause = new Timer(3000, this);
     /**
      * Creates new form logo
      */
