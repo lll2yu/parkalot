@@ -1,0 +1,94 @@
+* Install any implementation of sql (mysql workbench, mariadb,etc) 
+* Install the required JDBC drivers
+* Find out the jdbc driver name (e.g. org.mariadb.jdbc.Driver for mariadb)
+* Append the driver name in the required classes where it is stated in the code
+* Initialize the connection to database if required by your server or JDBC
+* Append the connection info in the code
+* Design the tables described under in the database. 
+
+Tables_in_#name_of_your_database
++-------------------+
+| admin_details     |
+| entry             |
+| rates             |
+| record            |
+| slots             |
+| temp              |
+| tempe             |
+| user_details      |
++-------------------+
+
+Table admin_details
+ Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| login | varchar(10) | YES  |     | NULL    |       |
+| pass  | varchar(16) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+Table entry
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| owner_name | varchar(50) | YES  |     | NULL    |       |
+| reg_no     | varchar(14) | YES  |     | NULL    |       |
+| car_type   | char(10)    | YES  |     | NULL    |       |
+| slot_no    | int(8)      | YES  |     | NULL    |       |
+| time       | varchar(10) | YES  |     | NULL    |       |
+| date       | varchar(15) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+Table rates
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(20) | YES  |     | NULL    |       |
+| price | float       | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+Table record
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| owner_name   | varchar(50) | YES  |     | NULL    |       |
+| reg_no       | varchar(14) | YES  |     | NULL    |       |
+| car_type     | char(10)    | YES  |     | NULL    |       |
+| slot_no      | int(8)      | YES  |     | NULL    |       |
+| entry_time   | varchar(10) | YES  |     | NULL    |       |
+| exit_time    | varchar(10) | YES  |     | NULL    |       |
+| date         | varchar(15) | YES  |     | NULL    |       |
+| amount_payed | float       | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+Table slots
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| no    | varchar(8) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+
+Table temp
++-------+--------+------+-----+---------+-------+
+| Field | Type   | Null | Key | Default | Extra |
++-------+--------+------+-----+---------+-------+
+| no    | int(5) | YES  |     | NULL    |       |
++-------+--------+------+-----+---------+-------+
+
+Table tempe
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| no    | varchar(15) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+Table user_details
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| login | char(10)    | YES  |     | NULL    |       |
+| pass  | varchar(16) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+* enter admin login and password in the admin_details table.
+* Rest can be configured from the application itself.
+* build the project and run.
+
