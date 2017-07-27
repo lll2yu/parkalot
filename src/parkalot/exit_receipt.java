@@ -44,7 +44,7 @@ public class exit_receipt extends javax.swing.JFrame {
 		}
 		catch(Exception e){}
     }
-    float in,out;
+    
     public void get_valuees(){
         java.util.Date date = new java.util.Date( );
             SimpleDateFormat ft =new SimpleDateFormat ("HHmm");
@@ -66,11 +66,41 @@ public class exit_receipt extends javax.swing.JFrame {
 		}
 		catch(Exception e){}
         l6.setText(ft.format(date));
-        out=Float.valueOf(l6.getText());
-        in=Float.valueOf(l5.getText());
         reg=l3.getText();
+        time_fn();
         calculate();
         
+    }
+    int parktime;
+    void time_fn(){
+    String time1 =l5.getText();
+    String time2 = l6.getText();
+    String tm1 = String.format("%02d", Integer.parseInt(time1));
+    String tm2 = String.format("%02d", Integer.parseInt(time2));
+
+    String hrs1 = time1.substring(0, 2);
+    String min1 = time1.substring(2, 4);
+    String hrs2 = time2.substring(0, 2);
+    String min2 = time2.substring(2, 4);
+
+    if (Integer.parseInt(time1) < Integer.parseInt(time2)) {
+        int minDiff = Integer.parseInt(min2) - Integer.parseInt(min1);
+        int hrsDiff = Integer.parseInt(hrs2) - Integer.parseInt(hrs1);
+        if (minDiff < 0) {
+            minDiff += 60;
+            hrsDiff--;
+        }
+            parktime=hrsDiff*60 +minDiff;
+    } 
+    else {
+        int minDiff = Integer.parseInt(min1) - Integer.parseInt(min2);
+        int hrsDiff = Integer.parseInt(hrs1) - Integer.parseInt(hrs2);
+        if (minDiff < 0) {
+            minDiff += 60;
+            hrsDiff--;
+        }
+            parktime=hrsDiff*60 +minDiff;
+    }
     }
     String reg;
     public void calculate(){
@@ -78,25 +108,25 @@ public class exit_receipt extends javax.swing.JFrame {
         if("Hatchback".equals(reg)){
             lap="Hatchback";
             get_rates();
-            value=(float) (((out-in))*ra);
+            value=(float) (((parktime))*ra);
         l8.setText(String.valueOf(value));
         }
         else if("Sedan".equals(reg)){
             lap="Sedan";
             get_rates();
-        value=(float) (((out-in))*ra);
+        value=(float) (((parktime))*ra);
         l8.setText(String.valueOf(value));
     }
         else if("Suv".equals(reg)){
             lap="Suv";
             get_rates();
-            value=(float) (((out-in))*ra);
+            value=(float) (((parktime))*ra);
         l8.setText(String.valueOf(value));
         }
         else if("Minivan".equals(reg)){
             lap="Minivan";
             get_rates();
-            value=(float) (((out-in))*ra);
+            value=(float) (((parktime))*ra);
         l8.setText(String.valueOf(value));
         }        
     }
