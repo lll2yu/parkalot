@@ -54,6 +54,7 @@ public class conf_page extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
         jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
@@ -152,6 +153,10 @@ public class conf_page extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7);
         jButton7.setBounds(342, 245, 190, 30);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 900, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,6 +287,7 @@ String x2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables

@@ -48,6 +48,7 @@ public class edit_admin extends javax.swing.JFrame {
         pf1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
         jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
@@ -106,6 +107,10 @@ public class edit_admin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(530, 310, 120, 25);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 900, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,6 +197,7 @@ String s1,s2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField pf1;
     private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables

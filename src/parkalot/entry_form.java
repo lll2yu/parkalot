@@ -66,6 +66,7 @@ public class entry_form extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         cb1 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -156,6 +157,10 @@ public class entry_form extends javax.swing.JFrame {
         cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select one--", "Sedan", "Suv", "Hatchback", "Minivan" }));
         getContentPane().add(cb1);
         cb1.setBounds(400, 200, 280, 25);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 900, 640);
 
         jMenu2.setText("Actions");
 
@@ -360,6 +365,7 @@ public class entry_form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

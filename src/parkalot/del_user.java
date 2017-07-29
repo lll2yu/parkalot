@@ -47,6 +47,7 @@ public class del_user extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
         jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
@@ -108,6 +109,10 @@ public class del_user extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4);
         jButton4.setBounds(460, 260, 90, 30);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 900, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,6 +192,7 @@ public class del_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

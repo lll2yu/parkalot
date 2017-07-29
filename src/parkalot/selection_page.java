@@ -45,6 +45,7 @@ public class selection_page extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         jDialog1.setTitle("Confirmation");
@@ -80,6 +81,7 @@ public class selection_page extends javax.swing.JFrame {
         jButton8.setBounds(210, 110, 100, 25);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("parkalot");
         setBounds(new java.awt.Rectangle(240, 90, 0, 0));
         setMinimumSize(new java.awt.Dimension(900, 480));
         setPreferredSize(new java.awt.Dimension(900, 640));
@@ -108,6 +110,10 @@ public class selection_page extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5);
         jButton5.setBounds(490, 250, 240, 100);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 900, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,5 +181,6 @@ public class selection_page extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

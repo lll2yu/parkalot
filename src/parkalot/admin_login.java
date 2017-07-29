@@ -50,6 +50,7 @@ public class admin_login extends javax.swing.JFrame {
         tf1 = new javax.swing.JTextField();
         pf1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -104,6 +105,10 @@ public class admin_login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(340, 330, 100, 40);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 900, 640);
 
         jMenu2.setText("Actions");
 
@@ -200,6 +205,7 @@ public class admin_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
