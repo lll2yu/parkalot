@@ -210,7 +210,7 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
         Graphics2D g2d = (Graphics2D)g;
         g2d.translate(pf.getImageableX(), pf.getImageableY());
 
-        g.drawString("Hello world!", 100, 100);
+        getContentPane().printAll(g);
 
         return PAGE_EXISTS;
     }

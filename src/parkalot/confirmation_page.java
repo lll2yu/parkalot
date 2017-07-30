@@ -87,7 +87,7 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
         Graphics2D g2d = (Graphics2D)g;
         g2d.translate(pf.getImageableX(), pf.getImageableY());
 
-        g.drawString("Hello world!", 100, 100);
+        getContentPane().printAll(g);
 
         return PAGE_EXISTS;
     }
@@ -121,6 +121,7 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(240, 90, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(900, 640));
         setPreferredSize(new java.awt.Dimension(900, 640));
         getContentPane().setLayout(null);

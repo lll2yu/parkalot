@@ -90,7 +90,7 @@ public class del_user extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(170, 140, 110, 30);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(470, 140, 220, 25);
+        jTextField1.setBounds(470, 140, 220, 27);
 
         jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
