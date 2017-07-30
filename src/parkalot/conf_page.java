@@ -85,15 +85,16 @@ public class conf_page extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 640));
         getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel1.setText("Configurations");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(350, 20, 230, 30);
+        jLabel1.setBounds(370, 20, 230, 30);
 
         jLabel2.setText("Set Parking Rates :");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(140, 80, 150, 30);
         getContentPane().add(tf1);
-        tf1.setBounds(530, 80, 70, 25);
+        tf1.setBounds(530, 80, 70, 27);
 
         jButton1.setText("Change Rate");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +103,7 @@ public class conf_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(340, 140, 200, 25);
+        jButton1.setBounds(330, 140, 200, 29);
 
         jButton2.setText("Change Admin Password");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +112,7 @@ public class conf_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(340, 310, 200, 25);
+        jButton2.setBounds(310, 340, 260, 29);
 
         jButton3.setText("Edit User Details");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +121,11 @@ public class conf_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(340, 380, 200, 25);
+        jButton3.setBounds(320, 420, 240, 29);
 
         cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--select one--", "Hatchback", "Sedan", "Suv", "Minivan" }));
         getContentPane().add(cb1);
-        cb1.setBounds(310, 80, 210, 25);
+        cb1.setBounds(310, 80, 210, 27);
 
         jLabel3.setText("₹ per hour");
         getContentPane().add(jLabel3);
@@ -137,13 +138,13 @@ public class conf_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(410, 440, 80, 30);
+        jButton6.setBounds(370, 510, 140, 30);
 
         jLabel4.setText("Set no. of parking slots available");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(140, 185, 230, 30);
+        jLabel4.setBounds(140, 210, 230, 30);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(490, 190, 190, 30);
+        jTextField1.setBounds(490, 210, 190, 30);
 
         jButton7.setText("Set");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +153,7 @@ public class conf_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(342, 245, 190, 30);
+        jButton7.setBounds(340, 270, 190, 30);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel5);

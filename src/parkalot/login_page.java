@@ -82,13 +82,13 @@ public class login_page extends javax.swing.JFrame {
 
         jLabel2.setText("Login Id:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(220, 200, 80, 40);
+        jLabel2.setBounds(220, 220, 80, 40);
 
         jLabel3.setText("Password:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(220, 270, 80, 30);
+        jLabel3.setBounds(220, 320, 80, 30);
         getContentPane().add(tf1);
-        tf1.setBounds(470, 210, 170, 30);
+        tf1.setBounds(510, 230, 170, 30);
 
         jButton2.setText("Login");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -97,9 +97,9 @@ public class login_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(340, 380, 160, 25);
+        jButton2.setBounds(360, 420, 160, 29);
         getContentPane().add(pf1);
-        pf1.setBounds(470, 270, 170, 25);
+        pf1.setBounds(510, 320, 170, 27);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel5);

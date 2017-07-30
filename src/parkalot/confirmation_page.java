@@ -132,11 +132,11 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
 
         jLabel2.setText("Owner's Name :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 90, 100, 20);
+        jLabel2.setBounds(140, 90, 130, 20);
 
         jLabel3.setText("Vehicle Reg. No : ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 150, 110, 20);
+        jLabel3.setBounds(140, 150, 140, 20);
 
         jLabel4.setText("Car Type :");
         getContentPane().add(jLabel4);
@@ -148,7 +148,7 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
 
         jLabel6.setText("Entry Time :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(140, 330, 100, 20);
+        jLabel6.setBounds(140, 330, 120, 20);
         getContentPane().add(l1);
         l1.setBounds(360, 90, 120, 30);
         getContentPane().add(l2);

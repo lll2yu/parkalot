@@ -76,19 +76,20 @@ public class edit_admin extends javax.swing.JFrame {
 
         jLabel1.setText("New Login Name :");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(180, 110, 160, 40);
+        jLabel1.setBounds(180, 120, 160, 40);
 
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel2.setText("Edit Login Settings");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(343, 25, 190, 30);
+        jLabel2.setBounds(390, 50, 190, 30);
 
         jLabel3.setText("New Password :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(180, 195, 130, 30);
+        jLabel3.setBounds(180, 210, 130, 30);
         getContentPane().add(tf1);
-        tf1.setBounds(510, 120, 200, 25);
+        tf1.setBounds(550, 130, 200, 27);
         getContentPane().add(pf1);
-        pf1.setBounds(510, 190, 200, 25);
+        pf1.setBounds(550, 210, 200, 27);
 
         jButton1.setText("Set New Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +98,7 @@ public class edit_admin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(250, 310, 150, 25);
+        jButton1.setBounds(250, 370, 180, 29);
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +107,7 @@ public class edit_admin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(530, 310, 120, 25);
+        jButton2.setBounds(560, 370, 140, 29);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel5);

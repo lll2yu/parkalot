@@ -69,7 +69,7 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         jDialog1.getContentPane().add(jButton7);
-        jButton7.setBounds(20, 110, 130, 25);
+        jButton7.setBounds(20, 110, 130, 29);
 
         jButton8.setText("Cancel");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,7 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         jDialog1.getContentPane().add(jButton8);
-        jButton8.setBounds(210, 110, 100, 25);
+        jButton8.setBounds(210, 110, 100, 29);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("parkalot");
@@ -94,7 +94,7 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(100, 250, 220, 100);
+        jButton2.setBounds(120, 250, 220, 100);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel1.setText("        Welcome Page");
@@ -109,7 +109,7 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(490, 250, 240, 100);
+        jButton5.setBounds(550, 250, 240, 100);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel3);

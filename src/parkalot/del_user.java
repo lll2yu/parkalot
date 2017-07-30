@@ -82,15 +82,16 @@ public class del_user extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 640));
         getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel1.setText("Delete User");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(350, 20, 180, 30);
+        jLabel1.setBounds(380, 60, 180, 30);
 
         jLabel2.setText("Username :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(170, 140, 110, 30);
+        jLabel2.setBounds(170, 200, 110, 30);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(470, 140, 220, 27);
+        jTextField1.setBounds(490, 200, 220, 27);
 
         jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +100,7 @@ public class del_user extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 260, 90, 30);
+        jButton1.setBounds(290, 340, 90, 30);
 
         jButton4.setText("Cancel");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +109,7 @@ public class del_user extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(460, 260, 90, 30);
+        jButton4.setBounds(530, 340, 90, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel4);

@@ -83,19 +83,19 @@ public class admin_login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jLabel1.setText("      Admin Login");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(234, 44, 260, 30);
+        jLabel1.setBounds(310, 50, 260, 30);
 
         jLabel2.setText("User Name:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(170, 140, 130, 30);
+        jLabel2.setBounds(190, 160, 130, 30);
 
         jLabel3.setText("Password:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(170, 210, 100, 30);
+        jLabel3.setBounds(190, 250, 100, 30);
         getContentPane().add(tf1);
-        tf1.setBounds(480, 140, 170, 25);
+        tf1.setBounds(510, 160, 170, 27);
         getContentPane().add(pf1);
-        pf1.setBounds(480, 220, 170, 25);
+        pf1.setBounds(510, 250, 170, 27);
 
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,7 @@ public class admin_login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(340, 330, 100, 40);
+        jButton1.setBounds(400, 370, 100, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel4);
