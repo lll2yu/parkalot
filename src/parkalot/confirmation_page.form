@@ -146,6 +146,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Print"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="470" y="510" width="100" height="-1"/>
@@ -181,11 +184,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="* this reciept is valid for 9 hours only, failing which &#x20b9;30 will be charged for each additional hour. "/>
+        <Property name="text" type="java.lang.String" value="* this reciept is valid for 24 hours only."/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="440" width="600" height="50"/>
+          <AbsoluteConstraints x="310" y="440" width="300" height="50"/>
         </Constraint>
       </Constraints>
     </Component>

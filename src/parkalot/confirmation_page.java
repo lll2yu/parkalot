@@ -15,12 +15,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package parkalot;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.*;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
 import java.sql.*;
 /**
  *
  * @author lll2yu
  */
-public class confirmation_page extends javax.swing.JFrame {
+public class confirmation_page extends javax.swing.JFrame implements Printable{
 
     /**
      * Creates new form confirmation_page
@@ -71,6 +76,20 @@ public class confirmation_page extends javax.swing.JFrame {
 			re=se.executeQuery("delete from temp");
             }
 		catch(Exception e){}
+    }
+    public int print(Graphics g, PageFormat pf, int page) throws
+                                                        PrinterException {
+
+        if (page > 0) {
+            return NO_SUCH_PAGE;
+        }
+
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.translate(pf.getImageableX(), pf.getImageableY());
+
+        g.drawString("Hello world!", 100, 100);
+
+        return PAGE_EXISTS;
     }
 
     /**
@@ -147,11 +166,16 @@ public class confirmation_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 510, 100, 25);
+        jButton1.setBounds(220, 510, 100, 29);
 
         jButton2.setText("Print");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(470, 510, 100, 25);
+        jButton2.setBounds(470, 510, 100, 29);
 
         jLabel7.setText("Date :");
         getContentPane().add(jLabel7);
@@ -163,9 +187,9 @@ public class confirmation_page extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(570, 330, 180, 30);
 
-        jLabel9.setText("* this reciept is valid for 9 hours only, failing which ₹30 will be charged for each additional hour. ");
+        jLabel9.setText("* this reciept is valid for 24 hours only.");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(160, 440, 600, 50);
+        jLabel9.setBounds(310, 440, 300, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,6 +199,17 @@ public class confirmation_page extends javax.swing.JFrame {
         empty_temp();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         PrinterJob job = PrinterJob.getPrinterJob();
+         job.setPrintable(this);
+         boolean ok = job.printDialog();
+         if (ok) {
+             try {
+                  job.print();
+             } catch (PrinterException ex) {}
+         }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,4 +265,5 @@ public class confirmation_page extends javax.swing.JFrame {
     private javax.swing.JLabel l5;
     private javax.swing.JLabel l6;
     // End of variables declaration//GEN-END:variables
+
 }
