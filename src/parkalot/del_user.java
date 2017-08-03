@@ -16,6 +16,8 @@
  */
 package parkalot;
 import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 /**
  *
  * @author lll2yu
@@ -26,9 +28,29 @@ public class del_user extends javax.swing.JFrame {
      * Creates new form del_user
      */
     public del_user() {
+        user_sorter();
+        add_box();
         initComponents();
     }
-
+    public void add_box(){
+        cb1.setModel(new DefaultComboBoxModel<String>(list.toArray(new String[0])));
+        getContentPane().add(cb1);
+        cb1.setBounds(490, 200, 280, 25);
+    }
+    void user_sorter(){
+        ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select login from user_details ");			
+ 				while (rlt.next()) {      
+  					 list.add((rlt.getString(1)));                                 
+				}
+		}
+		catch(Exception e){}
+}
+    ArrayList<String> list=new ArrayList<String>();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +66,6 @@ public class del_user extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -90,8 +111,6 @@ public class del_user extends javax.swing.JFrame {
         jLabel2.setText("Username :");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(170, 200, 110, 30);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(490, 200, 220, 27);
 
         jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +158,11 @@ public class del_user extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
     String s;
     void empty_details(){
-        s=jTextField1.getText();
+        Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				s= sI.toString();
+                        }
         ResultSet re;
         try{
 			Class.forName("add your jdbc Driver");
@@ -194,6 +217,6 @@ public class del_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    private javax.swing.JComboBox<String> cb1 = new javax.swing.JComboBox <String>();
 }
