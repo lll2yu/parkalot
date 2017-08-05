@@ -20,7 +20,8 @@ It is a parking terminal software implemented in java and database is handled by
 <h1>Build Instructions</h1>
 <h2>On Linux</h2>
 <p>Run script configure_connection.sh in /src/parkalot/config to add your connection info to the code</p>
-<h2>Run script configure_connection.bat in /src/parkalot/config to add your connection info to the code</h2>
-<p>Build the project and run</p>
+<h2>On Windows</h2>
+<p>Run script configure_connection.bat in /src/parkalot/config to add your connection info to the code</p>
+<p>Build the project and run.</p>
 <h1>Downloads</h1>
 <a href="https://github.com/LLL2yu/parkalot/releases">Releases can be found here</a>
