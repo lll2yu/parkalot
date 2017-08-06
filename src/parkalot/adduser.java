@@ -50,7 +50,9 @@ public class adduser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(240, 90, 0, 0));
         setMinimumSize(new java.awt.Dimension(900, 640));
+        setName("parkalot"); // NOI18N
         setPreferredSize(new java.awt.Dimension(900, 640));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setText("Add new User");

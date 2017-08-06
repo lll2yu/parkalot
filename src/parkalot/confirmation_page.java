@@ -120,45 +120,46 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
+        setBounds(new java.awt.Rectangle(380, 90, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(900, 640));
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setMinimumSize(new java.awt.Dimension(600, 640));
+        setPreferredSize(new java.awt.Dimension(600, 640));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setText("     Reciept*");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(410, 20, 201, 30);
+        jLabel1.setBounds(250, 20, 201, 30);
 
         jLabel2.setText("Owner's Name :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 90, 130, 20);
+        jLabel2.setBounds(80, 90, 130, 20);
 
         jLabel3.setText("Vehicle Reg. No : ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 150, 140, 20);
+        jLabel3.setBounds(80, 150, 140, 20);
 
         jLabel4.setText("Car Type :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(140, 210, 110, 20);
+        jLabel4.setBounds(80, 210, 110, 20);
 
         jLabel5.setText("Slot No. :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(140, 270, 110, 20);
+        jLabel5.setBounds(80, 270, 110, 20);
 
         jLabel6.setText("Entry Time :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(140, 330, 120, 20);
+        jLabel6.setBounds(80, 330, 120, 20);
         getContentPane().add(l1);
-        l1.setBounds(360, 90, 120, 30);
+        l1.setBounds(360, 90, 190, 30);
         getContentPane().add(l2);
-        l2.setBounds(360, 150, 100, 20);
+        l2.setBounds(360, 150, 150, 20);
         getContentPane().add(l3);
-        l3.setBounds(360, 210, 110, 20);
+        l3.setBounds(360, 210, 170, 20);
         getContentPane().add(l4);
-        l4.setBounds(360, 270, 110, 20);
+        l4.setBounds(360, 270, 140, 20);
         getContentPane().add(l5);
-        l5.setBounds(360, 330, 210, 30);
+        l5.setBounds(360, 330, 90, 30);
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +168,7 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 510, 100, 29);
+        jButton1.setBounds(140, 510, 100, 29);
 
         jButton2.setText("Print");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -176,21 +177,21 @@ public class confirmation_page extends javax.swing.JFrame implements Printable{
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(470, 510, 100, 29);
+        jButton2.setBounds(350, 510, 100, 29);
 
         jLabel7.setText("Date :");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(140, 375, 130, 30);
+        jLabel7.setBounds(80, 380, 130, 30);
         getContentPane().add(l6);
         l6.setBounds(360, 380, 220, 30);
 
         jLabel8.setText("Hours");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(570, 330, 180, 30);
+        jLabel8.setBounds(460, 330, 180, 30);
 
         jLabel9.setText("* this reciept is valid for 24 hours only.");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(310, 440, 300, 50);
+        jLabel9.setBounds(220, 440, 300, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
