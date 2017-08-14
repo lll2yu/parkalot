@@ -116,7 +116,7 @@ public class entry_form extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jLabel1.setText("Entry Form");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(350, 20, 160, 31);
+        jLabel1.setBounds(370, 20, 160, 31);
 
         jLabel2.setText("Owner's Name");
         getContentPane().add(jLabel2);

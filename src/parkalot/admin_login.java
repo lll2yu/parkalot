@@ -78,7 +78,6 @@ public class admin_login extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(445, 120, 0, 0));
         setMinimumSize(new java.awt.Dimension(500, 550));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(500, 550));
         setResizable(false);
         getContentPane().setLayout(null);
 

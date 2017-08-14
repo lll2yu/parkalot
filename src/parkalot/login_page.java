@@ -124,9 +124,6 @@ public class login_page extends javax.swing.JFrame {
         pf1.setBounds(110, 280, 290, 34);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_user_318585.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(48, 48));
-        jLabel2.setMinimumSize(new java.awt.Dimension(48, 48));
-        jLabel2.setPreferredSize(new java.awt.Dimension(48, 48));
         getContentPane().add(jLabel2);
         jLabel2.setBounds(220, 40, 48, 48);
 
@@ -229,12 +226,9 @@ public class login_page extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            // Set System L&F
+        javax.swing.UIManager.setLookAndFeel(
+            javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(login_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {

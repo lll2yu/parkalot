@@ -15,42 +15,45 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package parkalot;
+
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author lll2yu
  */
-public class del_user extends javax.swing.JFrame {
+public class park_edit extends javax.swing.JFrame {
 
     /**
-     * Creates new form del_user
+     * Creates new form park_edit
      */
-    public del_user() {
-        user_sorter();
+    public park_edit() {
         add_box();
         initComponents();
     }
-    public void add_box(){
+    void add_box(){
+        get_car();
         cb1.setModel(new DefaultComboBoxModel<String>(list.toArray(new String[0])));
         getContentPane().add(cb1);
-        cb1.setBounds(280, 200, 180, 25);
+        cb1.setBounds(170, 200, 180, 30);
     }
-    void user_sorter(){
+    
+    ArrayList<String> list=new ArrayList<String>();
+    void get_car(){
         ResultSet rlt;
         try{
 			Class.forName("add your jdbc Driver");
 			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select login from user_details ");			
+			rlt=stat.executeQuery("Select name from rates ");			
  				while (rlt.next()) {      
-  					 list.add((rlt.getString(1)));                                 
+  					 list.add(rlt.getString(1));                                 
 				}
 		}
 		catch(Exception e){}
-}
-    ArrayList<String> list=new ArrayList<String>();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,125 +63,154 @@ public class del_user extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-
-        jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
-        jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
-        jDialog1.setResizable(false);
-        jDialog1.getContentPane().setLayout(null);
-
-        jLabel3.setText("   Are you sure ?");
-        jDialog1.getContentPane().add(jLabel3);
-        jLabel3.setBounds(120, 20, 170, 30);
-
-        jButton2.setText("Yes");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jDialog1.getContentPane().add(jButton2);
-        jButton2.setBounds(60, 105, 80, 30);
-
-        jButton3.setText("No");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jDialog1.getContentPane().add(jButton3);
-        jButton3.setBounds(242, 105, 70, 30);
+        tf1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(445, 120, 0, 0));
         setMinimumSize(new java.awt.Dimension(500, 500));
-        setName("parkalot"); // NOI18N
         setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel1.setText("Delete User");
+        jLabel1.setText("Set Parking Rules");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 90, 180, 30);
+        jLabel1.setBounds(200, 40, 200, 40);
 
-        jLabel2.setText("Username :");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/settings-19-64.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 200, 110, 30);
+        jLabel2.setBounds(100, 30, 64, 64);
 
-        jButton1.setText("Ok");
+        jLabel3.setText("Set Parking Rates :");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 200, 150, 30);
+
+        jButton1.setText("Add/Remove car types");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 360, 90, 30);
+        jButton1.setBounds(170, 110, 190, 50);
 
-        jButton4.setText("Cancel");
+        jButton2.setText("Set Rate");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(210, 260, 120, 30);
+
+        jButton3.setText("Set Slots");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(210, 380, 120, 30);
+
+        jLabel4.setText("Set no. of parking slots available");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(10, 330, 250, 30);
+        getContentPane().add(tf1);
+        tf1.setBounds(360, 200, 60, 30);
+
+        jLabel5.setText("per hour");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(430, 200, 80, 30);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(310, 330, 81, 30);
+
+        jButton4.setText("Done");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(330, 360, 90, 30);
+        jButton4.setBounds(230, 430, 80, 30);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_user_318585.png"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(220, 30, 48, 48);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 500, 500);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(0, 0, 500, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jDialog1.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        empty_details();
-        jDialog1.dispose();
-        dispose();
-        new user_edit().setVisible(true);
+        set_rate();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jDialog1.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        dispose();
-        new user_edit().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-    String s;
-    void empty_details(){
+    float x1;
+String x2;
+    void set_rate(){
+        x1=(Float.parseFloat(tf1.getText())/60);
         Object sI=cb1.getSelectedItem();
         if (sI != null)
 			{
-    				s= sI.toString();
+    				x2 = sI.toString();
                         }
+        try{
+            ResultSet re;
+            Class.forName("add your jdbc Driver");
+		Connection ce=DriverManager.getConnection("add your connectin info");
+		Statement se=ce.createStatement();
+		re=se.executeQuery("update rates set price="+x1+"where name='"+x2+"'");
+                tf1.setText("Done");
+            }
+        catch(Exception e){}  
+    }
+    
+    String s1;
+    void set_slots(){
+        empty();
+        s1=tf1.getText();
         ResultSet re;
         try{
 			Class.forName("add your jdbc Driver");
 			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
-			re=se.executeQuery("delete from user_details where login='"+s+"'");
+			re=se.executeQuery("insert into slots(no) values('"+s1+"')");
 		}
 	catch(Exception e){}
     }
+    void empty(){
+        ResultSet re;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement se=ce.createStatement();
+			re=se.executeQuery("delete from slots");
+		}
+	catch(Exception e){}
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new set_car().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       set_slots(); 
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new conf_page().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,20 +228,20 @@ public class del_user extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(del_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(park_edit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(del_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(park_edit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(del_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(park_edit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(del_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(park_edit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new del_user().setVisible(true);
+                new park_edit().setVisible(true);
             }
         });
     }
@@ -219,12 +251,14 @@ public class del_user extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JComboBox<String> cb1 = new javax.swing.JComboBox <String>();
 }

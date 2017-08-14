@@ -41,13 +41,12 @@ public class edit_admin extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        tf1 = new javax.swing.JTextField();
         pf1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
@@ -69,29 +68,23 @@ public class edit_admin extends javax.swing.JFrame {
         jButton3.setBounds(130, 100, 110, 40);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
-        setMinimumSize(new java.awt.Dimension(900, 640));
+        setBounds(new java.awt.Rectangle(445, 120, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 500));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setText("New Login Name :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(180, 120, 160, 40);
-
         jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
-        jLabel2.setText("Edit Login Settings");
+        jLabel2.setText("Edit Login Password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(390, 50, 190, 30);
+        jLabel2.setBounds(160, 90, 190, 30);
 
         jLabel3.setText("New Password :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(180, 210, 130, 30);
-        getContentPane().add(tf1);
-        tf1.setBounds(550, 130, 200, 27);
+        jLabel3.setBounds(30, 180, 130, 30);
         getContentPane().add(pf1);
-        pf1.setBounds(550, 210, 200, 27);
+        pf1.setBounds(270, 180, 200, 30);
 
         jButton1.setText("Set New Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +93,7 @@ public class edit_admin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(250, 370, 180, 29);
+        jButton1.setBounds(160, 300, 180, 29);
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -109,24 +102,26 @@ public class edit_admin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(560, 370, 140, 29);
+        jButton2.setBounds(180, 380, 140, 29);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_lock_318582.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(220, 30, 48, 48);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 900, 640);
+        jLabel5.setBounds(0, 0, 500, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new conf_page().setVisible(true);
+        new user_edit().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-String s1,s2;
+String s1;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        s1=tf1.getText();
-        s2=pf1.getText();
-        empty_details();
+        s1=pf1.getText();
         set_newdetails();
         jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -136,23 +131,13 @@ String s1,s2;
         jDialog1.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    void empty_details(){
-        ResultSet re;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement se=ce.createStatement();
-			re=se.executeQuery("delete from admin_details");
-		}
-	catch(Exception e){}
-    }
     void set_newdetails(){
     ResultSet rep;
         try{
 			Class.forName("add your jdbc Driver");
 			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement see=ce.createStatement();
-			rep=see.executeQuery("insert into admin_details(login,pass) values ('"+s1+"'"+","+"'"+s2+"'"+");");
+			rep=see.executeQuery("update admin_details set pass='"+s1+"' where login='admin'");
 		}
 	catch(Exception e){}
 }
@@ -166,12 +151,9 @@ String s1,s2;
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            // Set System L&F
+        javax.swing.UIManager.setLookAndFeel(
+            javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(edit_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -202,6 +184,5 @@ String s1,s2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField pf1;
-    private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables
 }

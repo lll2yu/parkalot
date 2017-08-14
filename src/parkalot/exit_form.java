@@ -48,6 +48,7 @@ public class exit_form extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
@@ -84,18 +85,18 @@ public class exit_form extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
-        setMinimumSize(new java.awt.Dimension(900, 640));
+        setBounds(new java.awt.Rectangle(445, 120, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 500));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Enter the reg. no. of the vehicle :");
+        jLabel1.setText("Enter the reg. no. of the vehicle ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(140, 170, 230, 30);
+        jLabel1.setBounds(140, 150, 230, 30);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(550, 170, 190, 27);
+        jTextField1.setBounds(170, 240, 160, 30);
 
         jButton1.setText("Checkout");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,16 +105,20 @@ public class exit_form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(390, 360, 140, 40);
+        jButton1.setBounds(180, 360, 140, 40);
 
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel4.setText("Exit Vehicle");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(390, 40, 150, 30);
+        jLabel4.setBounds(200, 90, 150, 30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_fax_318578.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(220, 30, 48, 48);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 900, 640);
+        jLabel3.setBounds(0, 0, 500, 500);
 
         jMenu3.setText("Actions");
 
@@ -189,12 +194,9 @@ public class exit_form extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            // Set System L&F
+        javax.swing.UIManager.setLookAndFeel(
+            javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(exit_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -223,6 +225,7 @@ public class exit_form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

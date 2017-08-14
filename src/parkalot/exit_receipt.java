@@ -304,7 +304,7 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
 
         jLabel9.setText("Amount payable :");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(170, 525, 120, 20);
+        jLabel9.setBounds(170, 525, 170, 20);
         getContentPane().add(l8);
         l8.setBounds(490, 520, 270, 30);
 
@@ -365,12 +365,9 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            // Set System L&F
+        javax.swing.UIManager.setLookAndFeel(
+            javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(exit_receipt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
