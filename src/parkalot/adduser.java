@@ -61,15 +61,15 @@ public class adduser extends javax.swing.JFrame {
 
         jLabel2.setText("Username :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 120, 140, 30);
+        jLabel2.setBounds(120, 140, 140, 30);
 
         jLabel3.setText("Password :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(150, 220, 130, 30);
+        jLabel3.setBounds(120, 270, 130, 30);
         getContentPane().add(tf1);
-        tf1.setBounds(510, 120, 170, 27);
+        tf1.setBounds(610, 140, 170, 27);
         getContentPane().add(pf1);
-        pf1.setBounds(510, 220, 170, 30);
+        pf1.setBounds(610, 270, 170, 30);
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,7 @@ public class adduser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(230, 360, 100, 30);
+        jButton1.setBounds(200, 460, 100, 30);
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +87,7 @@ public class adduser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(510, 360, 100, 30);
+        jButton2.setBounds(600, 460, 100, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel4);

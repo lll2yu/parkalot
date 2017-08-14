@@ -30,6 +30,7 @@ public class admin_login extends javax.swing.JFrame {
      */
     public admin_login() {
         initComponents();
+        set_focus();
     }
 
     /**
@@ -45,11 +46,10 @@ public class admin_login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         tf1 = new javax.swing.JTextField();
         pf1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -75,30 +75,49 @@ public class admin_login extends javax.swing.JFrame {
         jButton2.setBounds(140, 100, 90, 30);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
-        setMinimumSize(new java.awt.Dimension(900, 640));
+        setBounds(new java.awt.Rectangle(445, 120, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 550));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setPreferredSize(new java.awt.Dimension(500, 550));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jLabel1.setText("      Admin Login");
+        jLabel1.setText("Admin Login");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(310, 50, 260, 30);
+        jLabel1.setBounds(190, 100, 160, 30);
 
-        jLabel2.setText("User Name:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(190, 160, 130, 30);
-
-        jLabel3.setText("Password:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(190, 250, 100, 30);
+        tf1.setBackground(new java.awt.Color(109, 162, 215));
+        tf1.setFont(new java.awt.Font("GE Inspira", 1, 18)); // NOI18N
+        tf1.setForeground(new java.awt.Color(1, 2, 4));
+        tf1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tf1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tf1FocusLost(evt);
+            }
+        });
         getContentPane().add(tf1);
-        tf1.setBounds(510, 160, 170, 27);
-        getContentPane().add(pf1);
-        pf1.setBounds(510, 250, 170, 27);
+        tf1.setBounds(110, 180, 290, 34);
 
+        pf1.setBackground(new java.awt.Color(109, 162, 215));
+        pf1.setFont(new java.awt.Font("GE Inspira", 1, 18)); // NOI18N
+        pf1.setForeground(new java.awt.Color(1, 2, 4));
+        pf1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pf1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pf1FocusLost(evt);
+            }
+        });
+        getContentPane().add(pf1);
+        pf1.setBounds(110, 280, 290, 34);
+
+        jButton1.setBackground(new java.awt.Color(181, 0, 255));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(212, 212, 212));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,11 +125,15 @@ public class admin_login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(400, 370, 100, 40);
+        jButton1.setBounds(200, 390, 100, 40);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_user_318585.png"))); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(220, 40, 48, 48);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 900, 640);
+        jLabel4.setBounds(0, 0, 500, 500);
 
         jMenu2.setText("Actions");
 
@@ -153,10 +176,13 @@ public class admin_login extends javax.swing.JFrame {
            else{
                jDialog1.setVisible(true);}
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    void set_focus(){
+        tf1.setText("Enter Username");
+        pf1.setText("Enter Password");
+        jButton1.requestFocusInWindow();
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        tf1.setText("");
-        pf1.setText("");
+        set_focus();
         jDialog1.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -164,6 +190,30 @@ public class admin_login extends javax.swing.JFrame {
         dispose();
         new selection_page().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void tf1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf1FocusGained
+        if(tf1.getText().isEmpty() || tf1.getText().equals("Enter Username")) {
+        tf1.setText("");
+      }
+    }//GEN-LAST:event_tf1FocusGained
+
+    private void tf1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf1FocusLost
+        if(tf1.getText().isEmpty()) {
+        tf1.setText("Enter Username");
+      }
+    }//GEN-LAST:event_tf1FocusLost
+
+    private void pf1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pf1FocusGained
+        if(pf1.getText().isEmpty() || pf1.getText().equals("Enter Password")) {
+        pf1.setText("");
+      }
+    }//GEN-LAST:event_pf1FocusGained
+
+    private void pf1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pf1FocusLost
+        if(pf1.getText().isEmpty()) {
+        pf1.setText("Enter Password");
+      }
+    }//GEN-LAST:event_pf1FocusLost
 
     /**
      * @param args the command line arguments
@@ -205,10 +255,9 @@ public class admin_login extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
