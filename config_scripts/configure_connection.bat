@@ -3,6 +3,7 @@ cls
 title connection config
 color 1f
 cd..
+cd src\parkalot
 ECHO. This will help you configure your source with your sql connection
 ECHO. 
 ECHO. ****************************************

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd ..
+cd src/parkalot
 echo "This will help you configure your source with your sql connection"
 echo ""
 echo "****************************************"
