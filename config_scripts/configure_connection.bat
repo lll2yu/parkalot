@@ -33,5 +33,8 @@ ECHO. "*                      Done                  *"
 ECHO. "*                                            *"
 ECHO. "**********************************************"
 erase sed*
+erase *.dll
+erase *.exe
+echo "Now run build.bat or use ant or maven to build. "
 pause
 exit 0

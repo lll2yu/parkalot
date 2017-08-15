@@ -81,4 +81,7 @@ echo "**********************************************"
 echo "*                      Done                  *"
 echo "*                                                                     *"
 echo "**********************************************"
+rm *.dll
+rm *.exe
+echo "Now run build.sh or use ant or maven to build. "
 exit 0
