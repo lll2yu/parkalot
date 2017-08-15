@@ -82,10 +82,10 @@ public class selection_page extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("parkalot");
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
-        setMinimumSize(new java.awt.Dimension(900, 640));
+        setBounds(new java.awt.Rectangle(445, 120, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 500));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -96,12 +96,12 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(120, 250, 220, 100);
+        jButton2.setBounds(140, 160, 220, 100);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel1.setText("        Welcome Page");
+        jLabel1.setFont(new java.awt.Font("GE Inspira", 1, 24)); // NOI18N
+        jLabel1.setText("        Welcome");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(340, 20, 300, 40);
+        jLabel1.setBounds(140, 40, 250, 40);
 
         jButton5.setText("Employees' Login");
         jButton5.setToolTipText("Click to login");
@@ -111,11 +111,11 @@ public class selection_page extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(550, 250, 240, 100);
+        jButton5.setBounds(140, 320, 220, 100);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 900, 640);
+        jLabel3.setBounds(0, 0, 500, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,9 +150,12 @@ public class selection_page extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            // Set System L&F
-        javax.swing.UIManager.setLookAndFeel(
-            javax.swing.UIManager.getSystemLookAndFeelClassName());
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(selection_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
