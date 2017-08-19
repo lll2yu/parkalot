@@ -46,6 +46,10 @@ public class adduser extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,15 +67,15 @@ public class adduser extends javax.swing.JFrame {
 
         jLabel2.setText("Username :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 180, 140, 30);
+        jLabel2.setBounds(60, 230, 140, 30);
 
         jLabel3.setText("Password :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 270, 130, 30);
+        jLabel3.setBounds(60, 330, 130, 30);
         getContentPane().add(tf1);
         tf1.setBounds(260, 180, 170, 30);
         getContentPane().add(pf1);
-        pf1.setBounds(260, 270, 170, 30);
+        pf1.setBounds(260, 330, 170, 30);
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,16 +99,30 @@ public class adduser extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(220, 30, 48, 48);
 
+        jLabel6.setText("Address:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(60, 280, 140, 30);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(260, 280, 170, 30);
+
+        jLabel7.setText("Full Name:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(60, 180, 140, 30);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(260, 230, 170, 30);
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 500, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    String s1,s2;
+    String s1,s2,s3,s4;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       s1=tf1.getText();
-        s2=pf1.getText();  
+        s2=pf1.getText();
+        s3=jTextField1.getText();
+        s4=jTextField2.getText();
         set_newdetails();
         dispose();
         new user_edit().setVisible(true);
@@ -121,7 +139,7 @@ public class adduser extends javax.swing.JFrame {
 			Class.forName("add your jdbc Driver");
 			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement see=ce.createStatement();
-			rep=see.executeQuery("insert into user_details(login,pass) values ('"+s1+"'"+","+"'"+s2+"'"+");");
+			rep=see.executeQuery("insert into user_details(fname,login,address,pass) values ('"+s1+"'"+","+"'"+s2+"','"+s3+"','"+s4+"');");
 		}
 	catch(Exception e){}
 }
@@ -168,6 +186,10 @@ public class adduser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JPasswordField pf1;
     private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables

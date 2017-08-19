@@ -84,7 +84,9 @@ Table user_details
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
+| fname | char(30)    | YES  |     | NULL    |       |
 | login | char(10)    | YES  |     | NULL    |       |
+|address| varchar(60) | YES  |     | NULL    |       |
 | pass  | varchar(16) | YES  |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 
