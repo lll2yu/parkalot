@@ -41,7 +41,6 @@ public class emp_show extends javax.swing.JFrame {
         cb1.setBounds(530, 180, 270, 27);
     }
     ArrayList<String> list=new ArrayList<String>();
-    ArrayList<String> details=new ArrayList<String>();
     void user_sorter(){
         ResultSet rlt;
         try{
@@ -68,12 +67,33 @@ public class emp_show extends javax.swing.JFrame {
 			Class.forName("add your jdbc Driver");
 			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select * from user_details where login='"+name+"'");			
- 				while (rlt.next()) {      
-  					 details.add((rlt.getString(1)));                                 
-				}
+			rlt=stat.executeQuery("Select fname from user_details where login='"+name+"'");     
+  					while(rlt.next()){
+                                            ep1.setText((rlt.getString(1)));
+                                        }
 		}
 		catch(Exception e){}
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select address from user_details where login='"+name+"'");     
+  					while(rlt.next()){
+                                            ep3.setText((rlt.getString(1)));
+                                        }
+		}
+		catch(Exception e){}
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select pass from user_details where login='"+name+"'");     
+  					while(rlt.next()){
+                                            ep4.setText((rlt.getString(1)));
+                                        }
+		}
+		catch(Exception e){}
+        ep2.setText(name);
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,13 +104,23 @@ public class emp_show extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu2 = new javax.swing.JMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        ep1 = new javax.swing.JLabel();
+        ep2 = new javax.swing.JLabel();
+        ep3 = new javax.swing.JLabel();
+        ep4 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(240, 90, 0, 0));
@@ -108,9 +138,10 @@ public class emp_show extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getAccessibleContext().setAccessibleParent(null);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(120, 400, 690, 100);
+        jScrollPane1.setBounds(80, 400, 750, 23);
 
         jButton1.setText("Get Info");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,25 +159,49 @@ public class emp_show extends javax.swing.JFrame {
 
         jLabel2.setText("Select the user to show info of:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 180, 187, 30);
+        jLabel2.setBounds(150, 180, 250, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_group_318580.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(440, 30, 48, 48);
+        getContentPane().add(ep1);
+        ep1.setBounds(80, 450, 180, 30);
+        getContentPane().add(ep2);
+        ep2.setBounds(270, 450, 180, 30);
+        getContentPane().add(ep3);
+        ep3.setBounds(460, 450, 180, 30);
+        getContentPane().add(ep4);
+        ep4.setBounds(650, 450, 180, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 900, 640);
 
+        jMenu3.setText("Actions");
+
+        jMenuItem1.setText("Go Back");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
         get_details();
-        Object[] row= details.toArray();
-        model.addRow(row);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new user_edit().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,11 +239,19 @@ public class emp_show extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ep1;
+    private javax.swing.JLabel ep2;
+    private javax.swing.JLabel ep3;
+    private javax.swing.JLabel ep4;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

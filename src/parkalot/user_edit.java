@@ -86,7 +86,7 @@ public class user_edit extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(10, 300, 210, 100);
 
-        jButton4.setText("Show all Employees");
+        jButton4.setText("Show Employees info");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

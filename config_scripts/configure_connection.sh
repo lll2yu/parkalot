@@ -79,9 +79,10 @@ else
 fi
 echo "**********************************************"
 echo "*                      Done                  *"
-echo "*                                                                     *"
+echo "*                                            *"
 echo "**********************************************"
 rm *.dll
 rm *.exe
 echo "Now run build.sh or use ant or maven to build. "
+read -n 1 -s -r -p "Press any key to continue"
 exit 0

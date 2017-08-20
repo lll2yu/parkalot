@@ -95,7 +95,8 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
             minDiff += 60;
             hrsDiff--;
         }
-            parktime=hrsDiff*60 +minDiff;
+            if(minDiff>0)
+                parktime=hrsDiff + 1;
     } 
     else {
         int minDiff = Integer.parseInt(min1) - Integer.parseInt(min2);
@@ -104,38 +105,17 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
             minDiff += 60;
             hrsDiff--;
         }
-            parktime=hrsDiff*60 +minDiff;
+        if(minDiff>0)
+                parktime=hrsDiff + 1;
     }
     }
     String reg;
     public void calculate(){
         float value;
-        if("Hatchback".equals(reg)){
-            lap="Hatchback";
             get_rates();
             value=(float) (((parktime))*ra);
-        l8.setText(String.valueOf(value));
-        }
-        else if("Sedan".equals(reg)){
-            lap="Sedan";
-            get_rates();
-        value=(float) (((parktime))*ra);
         l8.setText(String.valueOf(value));
     }
-        else if("Suv".equals(reg)){
-            lap="Suv";
-            get_rates();
-            value=(float) (((parktime))*ra);
-        l8.setText(String.valueOf(value));
-        }
-        else if("Minivan".equals(reg)){
-            lap="Minivan";
-            get_rates();
-            value=(float) (((parktime))*ra);
-        l8.setText(String.valueOf(value));
-        }        
-    }
-    String lap;
     float ra;
     void get_rates(){
         ResultSet re;
@@ -143,7 +123,7 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
 			Class.forName("add your jdbc Driver");
 			Connection ce=DriverManager.getConnection("add your connectin info");
 			Statement se=ce.createStatement();
-			re=se.executeQuery("select price from rates where name='"+lap+"'");
+			re=se.executeQuery("select price from rates where name='"+reg+"'");
                         while(re.next()){
 				ra=re.getFloat(1);
                             }
@@ -246,10 +226,10 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(240, 90, 0, 0));
-        setMinimumSize(new java.awt.Dimension(900, 640));
+        setBounds(new java.awt.Rectangle(440, 90, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 660));
         setName("parkalot"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(900, 640));
+        setPreferredSize(new java.awt.Dimension(500, 660));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -258,55 +238,55 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
         jLabel1.setMinimumSize(new java.awt.Dimension(65, 15));
         jLabel1.setPreferredSize(new java.awt.Dimension(65, 15));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(400, 20, 110, 30);
+        jLabel1.setBounds(210, 20, 110, 30);
 
         jLabel2.setText("Owner's name :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(170, 80, 130, 20);
+        jLabel2.setBounds(50, 80, 130, 20);
 
         jLabel3.setText("Reg. No. :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(170, 135, 100, 30);
+        jLabel3.setBounds(50, 140, 100, 30);
 
         jLabel4.setText("Car Type :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(170, 200, 100, 30);
+        jLabel4.setBounds(50, 200, 100, 30);
 
         jLabel5.setText("Slot No :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(170, 270, 100, 30);
+        jLabel5.setBounds(50, 270, 100, 30);
 
         jLabel6.setText("Entry Time :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(170, 335, 90, 30);
+        jLabel6.setBounds(50, 340, 90, 30);
 
         jLabel7.setText("Exit Time :");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(170, 405, 90, 20);
+        jLabel7.setBounds(50, 410, 90, 20);
 
         jLabel8.setText("Date :");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(170, 465, 110, 20);
+        jLabel8.setBounds(50, 470, 110, 20);
         getContentPane().add(l1);
-        l1.setBounds(490, 80, 260, 30);
+        l1.setBounds(230, 80, 260, 30);
         getContentPane().add(l2);
-        l2.setBounds(490, 135, 270, 30);
+        l2.setBounds(230, 140, 270, 30);
         getContentPane().add(l3);
-        l3.setBounds(490, 205, 270, 30);
+        l3.setBounds(230, 205, 270, 30);
         getContentPane().add(l4);
-        l4.setBounds(490, 275, 270, 30);
+        l4.setBounds(230, 275, 270, 30);
         getContentPane().add(l5);
-        l5.setBounds(490, 345, 270, 30);
+        l5.setBounds(230, 345, 140, 30);
         getContentPane().add(l6);
-        l6.setBounds(490, 405, 270, 30);
+        l6.setBounds(230, 405, 140, 30);
         getContentPane().add(l7);
-        l7.setBounds(490, 465, 270, 30);
+        l7.setBounds(230, 465, 270, 30);
 
         jLabel9.setText("Amount payable :");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(170, 525, 170, 20);
+        jLabel9.setBounds(50, 530, 170, 20);
         getContentPane().add(l8);
-        l8.setBounds(490, 520, 270, 30);
+        l8.setBounds(230, 520, 270, 30);
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -315,15 +295,15 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 570, 120, 30);
+        jButton1.setBounds(120, 590, 120, 30);
 
         jLabel10.setText("Hours");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(770, 345, 90, 30);
+        jLabel10.setBounds(370, 345, 90, 30);
 
         jLabel11.setText("Hours");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(770, 405, 60, 30);
+        jLabel11.setBounds(370, 405, 60, 30);
 
         jButton2.setText("Print");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -332,7 +312,7 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(570, 570, 120, 30);
+        jButton2.setBounds(280, 590, 120, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

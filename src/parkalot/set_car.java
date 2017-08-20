@@ -67,13 +67,12 @@ public class set_car extends javax.swing.JFrame {
 	catch(Exception e){}   
     }
     void remove_car(){
-        String s1;
+        String s1 = null;
         Object sI=cb1.getSelectedItem();
         if (sI != null)
 			{
     				s1= sI.toString();
                         }
-        s1=tf1.getText();
         ResultSet re;
         try{
 			Class.forName("add your jdbc Driver");
@@ -102,10 +101,12 @@ public class set_car extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jDialog1.setBounds(new java.awt.Rectangle(530, 240, 250, 50));
         jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
-        jDialog1.setPreferredSize(new java.awt.Dimension(350, 200));
         jDialog1.setResizable(false);
         jDialog1.getContentPane().setLayout(null);
 
@@ -136,11 +137,11 @@ public class set_car extends javax.swing.JFrame {
 
         jLabel2.setText("Add Car Type");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(80, 110, 81, 30);
+        jLabel2.setBounds(80, 110, 130, 30);
 
         jLabel3.setText("Remove Car Type");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 300, 105, 30);
+        jLabel3.setBounds(80, 300, 150, 30);
         getContentPane().add(tf1);
         tf1.setBounds(280, 110, 160, 30);
 
@@ -166,6 +167,20 @@ public class set_car extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 500, 500);
 
+        jMenu3.setText("Actions");
+
+        jMenuItem1.setText("Go Back");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -184,6 +199,11 @@ public class set_car extends javax.swing.JFrame {
         new set_car().setVisible(true);
         dispose();        
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new park_edit().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,6 +250,9 @@ public class set_car extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JComboBox<String> cb1 = new javax.swing.JComboBox <String>();

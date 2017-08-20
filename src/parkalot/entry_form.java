@@ -33,10 +33,14 @@ public class entry_form extends javax.swing.JFrame {
      */
     public entry_form() {
         slot_sorter();
+        get_cars();
         add_box();
         initComponents();
     }
     public void add_box(){
+        cb1.setModel(new DefaultComboBoxModel<String>(car.toArray(new String[0])));
+        getContentPane().add(cb1);
+        cb1.setBounds(510, 250, 280, 25);
         cb2.setModel(new DefaultComboBoxModel<Integer>(two.toArray(new Integer[0])));
         getContentPane().add(cb2);
         cb2.setBounds(510, 320, 280, 25);
@@ -65,7 +69,6 @@ public class entry_form extends javax.swing.JFrame {
         tf2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        cb1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -156,10 +159,6 @@ public class entry_form extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(500, 480, 170, 29);
 
-        cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select one--", "Sedan", "Suv", "Hatchback", "Minivan" }));
-        getContentPane().add(cb1);
-        cb1.setBounds(510, 250, 280, 27);
-
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, 0, 900, 640);
@@ -204,6 +203,7 @@ public class entry_form extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
     ArrayList<Integer> list=new ArrayList<Integer>();
     ArrayList<Integer> two =new ArrayList<Integer>();
+    ArrayList<String> car=new ArrayList<String>();
     void set_two(){
         get_i();
         for(int j=1;j<=i;j++){
@@ -239,6 +239,19 @@ public class entry_form extends javax.swing.JFrame {
 		catch(Exception e){}
         two.removeAll(list);
 }
+        void get_cars(){
+            ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select name from rates ");			
+ 				while (rlt.next()) {      
+  					 car.add(rlt.getString(1));                                 
+				}
+		}
+		catch(Exception e){}
+        }
         
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         perma();
@@ -355,7 +368,6 @@ public class entry_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cb1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -376,4 +388,5 @@ public class entry_form extends javax.swing.JFrame {
     private javax.swing.JTextField tf2;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JComboBox<Integer> cb2 = new javax.swing.JComboBox <Integer>();
+    private javax.swing.JComboBox<String> cb1 = new javax.swing.JComboBox <String>();
 }

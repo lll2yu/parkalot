@@ -47,9 +47,9 @@ public class adduser extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf3 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tf2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,14 +102,14 @@ public class adduser extends javax.swing.JFrame {
         jLabel6.setText("Address:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(60, 280, 140, 30);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(260, 280, 170, 30);
+        getContentPane().add(tf3);
+        tf3.setBounds(260, 280, 170, 30);
 
         jLabel7.setText("Full Name:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(60, 180, 140, 30);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(260, 230, 170, 30);
+        getContentPane().add(tf2);
+        tf2.setBounds(260, 230, 170, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel4);
@@ -120,9 +120,9 @@ public class adduser extends javax.swing.JFrame {
     String s1,s2,s3,s4;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       s1=tf1.getText();
-        s2=pf1.getText();
-        s3=jTextField1.getText();
-        s4=jTextField2.getText();
+        s2=tf2.getText();
+        s3=tf3.getText();
+        s4=pf1.getText();
         set_newdetails();
         dispose();
         new user_edit().setVisible(true);
@@ -188,9 +188,9 @@ public class adduser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPasswordField pf1;
     private javax.swing.JTextField tf1;
+    private javax.swing.JTextField tf2;
+    private javax.swing.JTextField tf3;
     // End of variables declaration//GEN-END:variables
 }
