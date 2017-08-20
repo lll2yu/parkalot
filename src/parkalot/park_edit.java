@@ -36,8 +36,13 @@ public class park_edit extends javax.swing.JFrame {
     void add_box(){
         get_car();
         cb1.setModel(new DefaultComboBoxModel<String>(list.toArray(new String[0])));
-        getContentPane().add(cb1);
-        cb1.setBounds(170, 200, 180, 30);
+        cb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb1ActionPerformed(evt);
+            }
+        });
+         getContentPane().add(cb1);
+         cb1.setBounds(170, 200, 180, 30);
     }
     
     ArrayList<String> list=new ArrayList<String>();
@@ -75,7 +80,6 @@ public class park_edit extends javax.swing.JFrame {
         tf2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         label = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,7 +118,7 @@ public class park_edit extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(300, 260, 120, 30);
+        jButton2.setBounds(210, 260, 120, 30);
 
         jButton3.setText("Set Slots");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -149,15 +153,6 @@ public class park_edit extends javax.swing.JFrame {
         label.setForeground(new java.awt.Color(255, 39, 0));
         getContentPane().add(label);
         label.setBounds(40, 300, 430, 24);
-
-        jButton5.setText("Get Rate");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(120, 260, 120, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg_500.png"))); // NOI18N
         getContentPane().add(jLabel6);
@@ -226,10 +221,9 @@ String x2;
         new conf_page().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         get_oldRate();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }
     String oldRate;
     void get_oldRate(){
         Object sI=cb1.getSelectedItem();
@@ -291,7 +285,6 @@ String x2;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
