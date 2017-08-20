@@ -29,7 +29,18 @@ public class exit_form extends javax.swing.JFrame {
     public exit_form() {
         initComponents();
     }
-    
+    void tempe(){
+        try{
+            String s;
+            s=jTextField1.getText();
+            Class.forName("add your jdbc Driver");
+            dum=DriverManager.getConnection("add your connectin info");
+            dang=dum.prepareStatement("insert into tempe(no) values ('"+s+"')");
+            dang.executeUpdate();
+            
+        }
+        catch(Exception e){} 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -171,19 +182,7 @@ public class exit_form extends javax.swing.JFrame {
         new login_page().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-    
-    void tempe(){
-        try{
-            String s;
-            s=jTextField1.getText();
-            Class.forName("add your jdbc Driver");
-            dum=DriverManager.getConnection("add your connectin info");
-            dang=dum.prepareStatement("insert into tempe(no) values ('"+s+"')");
-            dang.executeUpdate();
-            
-        }
-        catch(Exception e){} 
-    }
+
     /**
      * @param args the command line arguments
      */

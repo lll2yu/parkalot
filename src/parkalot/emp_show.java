@@ -138,7 +138,6 @@ public class emp_show extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getAccessibleContext().setAccessibleParent(null);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(80, 400, 750, 23);

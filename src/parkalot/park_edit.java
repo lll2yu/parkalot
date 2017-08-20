@@ -59,6 +59,72 @@ public class park_edit extends javax.swing.JFrame {
 		}
 		catch(Exception e){}
     }
+    
+    float x1;
+    String x2;
+    void set_rate(){
+        x1=(Float.parseFloat(tf1.getText()));
+        Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				x2 = sI.toString();
+                        }
+        try{
+            ResultSet re;
+            Class.forName("add your jdbc Driver");
+		Connection ce=DriverManager.getConnection("add your connectin info");
+		Statement se=ce.createStatement();
+		re=se.executeQuery("update rates set price="+x1+"where name='"+x2+"'");
+                tf1.setText("Done");
+            }
+        catch(Exception e){}  
+    }
+    
+    String s1;
+    void set_slots(){
+        empty();
+        s1=tf2.getText();
+        ResultSet re;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement se=ce.createStatement();
+			re=se.executeQuery("insert into slots(no) values('"+s1+"')");
+		}
+	catch(Exception e){}
+        tf2.setText("Done");
+    }
+    void empty(){
+        ResultSet re;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement se=ce.createStatement();
+			re=se.executeQuery("delete from slots");
+		}
+	catch(Exception e){}
+    }
+    String oldRate;
+    void get_oldRate(){
+        Object sI=cb1.getSelectedItem();
+        String su = null;
+        if (sI != null)
+			{
+    				su = sI.toString();
+                        }
+        ResultSet re;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement se=ce.createStatement();
+			re=se.executeQuery("select price from rates where name='"+su+"'");
+                            while(re.next()){
+                                oldRate=re.getString(1);
+                            }
+                        label.setText("Present rate is "+oldRate);
+		}
+	catch(Exception e){}
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,50 +230,7 @@ public class park_edit extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         set_rate();
     }//GEN-LAST:event_jButton2ActionPerformed
-    float x1;
-String x2;
-    void set_rate(){
-        x1=(Float.parseFloat(tf1.getText()));
-        Object sI=cb1.getSelectedItem();
-        if (sI != null)
-			{
-    				x2 = sI.toString();
-                        }
-        try{
-            ResultSet re;
-            Class.forName("add your jdbc Driver");
-		Connection ce=DriverManager.getConnection("add your connectin info");
-		Statement se=ce.createStatement();
-		re=se.executeQuery("update rates set price="+x1+"where name='"+x2+"'");
-                tf1.setText("Done");
-            }
-        catch(Exception e){}  
-    }
-    
-    String s1;
-    void set_slots(){
-        empty();
-        s1=tf2.getText();
-        ResultSet re;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement se=ce.createStatement();
-			re=se.executeQuery("insert into slots(no) values('"+s1+"')");
-		}
-	catch(Exception e){}
-        tf2.setText("Done");
-    }
-    void empty(){
-        ResultSet re;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement se=ce.createStatement();
-			re=se.executeQuery("delete from slots");
-		}
-	catch(Exception e){}
-    }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new set_car().setVisible(true);
         dispose();
@@ -221,30 +244,11 @@ String x2;
         new conf_page().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+    
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         get_oldRate();
     }
-    String oldRate;
-    void get_oldRate(){
-        Object sI=cb1.getSelectedItem();
-        String su = null;
-        if (sI != null)
-			{
-    				su = sI.toString();
-                        }
-        ResultSet re;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement se=ce.createStatement();
-			re=se.executeQuery("select price from rates where name='"+su+"'");
-                            while(re.next()){
-                                oldRate=re.getString(1);
-                            }
-                        label.setText("Present rate is "+oldRate);
-		}
-	catch(Exception e){}
-    }
+    
     /**
      * @param args the command line arguments
      */

@@ -28,7 +28,16 @@ public class adduser extends javax.swing.JFrame {
     public adduser() {
         initComponents();
     }
-
+    void set_newdetails(){
+    ResultSet rep;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement see=ce.createStatement();
+			rep=see.executeQuery("insert into user_details(fname,login,address,pass) values ('"+s1+"'"+","+"'"+s2+"','"+s3+"','"+s4+"');");
+		}
+	catch(Exception e){}
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,16 +142,6 @@ public class adduser extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
     
-    void set_newdetails(){
-    ResultSet rep;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement see=ce.createStatement();
-			rep=see.executeQuery("insert into user_details(fname,login,address,pass) values ('"+s1+"'"+","+"'"+s2+"','"+s3+"','"+s4+"');");
-		}
-	catch(Exception e){}
-}
     /**
      * @param args the command line arguments
      */

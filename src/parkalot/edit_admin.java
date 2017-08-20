@@ -28,7 +28,17 @@ public class edit_admin extends javax.swing.JFrame {
     public edit_admin() {
         initComponents();
     }
-
+    String s1;
+    void set_newdetails(){
+    ResultSet rep;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement see=ce.createStatement();
+			rep=see.executeQuery("update admin_details set pass='"+s1+"' where login='admin'");
+		}
+	catch(Exception e){}
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,7 +129,7 @@ public class edit_admin extends javax.swing.JFrame {
         new user_edit().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-String s1;
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         s1=pf1.getText();
         set_newdetails();
@@ -131,17 +141,6 @@ String s1;
         jDialog1.dispose();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    void set_newdetails(){
-    ResultSet rep;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement see=ce.createStatement();
-			rep=see.executeQuery("update admin_details set pass='"+s1+"' where login='admin'");
-		}
-	catch(Exception e){}
-}
     /**
      * @param args the command line arguments
      */

@@ -51,6 +51,22 @@ public class del_user extends javax.swing.JFrame {
 		catch(Exception e){}
 }
     ArrayList<String> list=new ArrayList<String>();
+    String s;
+    void empty_details(){
+        Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				s= sI.toString();
+                        }
+        ResultSet re;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection ce=DriverManager.getConnection("add your connectin info");
+			Statement se=ce.createStatement();
+			re=se.executeQuery("delete from user_details where login='"+s+"'");
+		}
+	catch(Exception e){}
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -163,22 +179,6 @@ public class del_user extends javax.swing.JFrame {
         dispose();
         new user_edit().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
-    String s;
-    void empty_details(){
-        Object sI=cb1.getSelectedItem();
-        if (sI != null)
-			{
-    				s= sI.toString();
-                        }
-        ResultSet re;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection ce=DriverManager.getConnection("add your connectin info");
-			Statement se=ce.createStatement();
-			re=se.executeQuery("delete from user_details where login='"+s+"'");
-		}
-	catch(Exception e){}
-    }
     /**
      * @param args the command line arguments
      */

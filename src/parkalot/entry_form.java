@@ -38,15 +38,124 @@ public class entry_form extends javax.swing.JFrame {
         initComponents();
     }
     public void add_box(){
-        cb1.setModel(new DefaultComboBoxModel<String>(car.toArray(new String[0])));
+        cb1.setModel(new DefaultComboBoxModel<>(car.toArray(new String[0])));
         getContentPane().add(cb1);
         cb1.setBounds(510, 250, 280, 25);
-        cb2.setModel(new DefaultComboBoxModel<Integer>(two.toArray(new Integer[0])));
+        cb2.setModel(new DefaultComboBoxModel<>(two.toArray(new Integer[0])));
         getContentPane().add(cb2);
         cb2.setBounds(510, 320, 280, 25);
     }
     Connection dum;
-            PreparedStatement dang;
+    PreparedStatement dang;
+    ArrayList<Integer> list=new ArrayList<>();
+    ArrayList<Integer> two =new ArrayList<>();
+    ArrayList<String> car=new ArrayList<>();
+    void set_two(){
+        get_i();
+        for(int j=1;j<=i;j++){
+            two.add(j);
+        }
+    }
+    int i;
+    void get_i(){
+        ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select * from slots ");			
+ 				while (rlt.next()) {      
+  					 i=(Integer.parseInt(rlt.getString(1)));                                 
+				}
+		}
+		catch(Exception e){}
+    }
+    void slot_sorter(){
+            set_two();
+        ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select slot_no from entry ");			
+ 				while (rlt.next()) {      
+  					 list.add(Integer.parseInt(rlt.getString(1)));                                 
+				}
+		}
+		catch(Exception e){}
+        two.removeAll(list);
+}
+    void get_cars(){
+            ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select name from rates ");			
+ 				while (rlt.next()) {      
+  					 car.add(rlt.getString(1));                                 
+				}
+		}
+		catch(Exception e){}
+        }
+        String sIs,sIs2;
+    void perma(){
+        String x1,x2,x3,x5,x6;
+        int x4;
+        x1=tf1.getText();
+        x2=tf2.getText();
+        Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				sIs = sI.toString();
+                        }
+        x3=sIs;
+        Object sI2=cb2.getSelectedItem();
+        if (sI2 != null)
+			{
+    				sIs2 = sI2.toString();
+                        }
+        x4=Integer.parseInt(sIs2);
+        
+        java.util.Date date = new java.util.Date( );
+            SimpleDateFormat ft =new SimpleDateFormat ("HHmm");
+            SimpleDateFormat fft =new SimpleDateFormat ("yyyy.MM.dd");
+            x5=ft.format(date);
+            x6=fft.format(date);
+        try{
+            Class.forName("add your jdbc Driver");
+            ham=DriverManager.getConnection("add your connectin info");
+            egg=ham.prepareStatement("insert entry value(?,?,?,?,?,?)");
+            egg.setString(1, x1);
+            egg.setString(2, x2);
+            egg.setString(3, x3);
+            egg.setInt(4, x4);
+            egg.setString(5, x5);
+            egg.setString(6, x6);
+            egg.executeUpdate();
+        }
+        catch(Exception e){}  
+    }
+    
+    void temp(){
+        try{
+            int s;
+            Object sI2=cb2.getSelectedItem();
+        if (sI2 != null)
+			{
+    				sIs2 = sI2.toString();
+                        }
+        s=Integer.parseInt(sIs2);
+            Class.forName("add your jdbc Driver");
+            dum=DriverManager.getConnection("add your connectin info");
+            dang=dum.prepareStatement("insert into temp(no) values ("+s+")");
+            dang.executeUpdate();
+            
+        }
+        catch(Exception e){} 
+        
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -201,58 +310,7 @@ public class entry_form extends javax.swing.JFrame {
         jDialog1.setVisible(true);
         temp();
     }//GEN-LAST:event_jButton1ActionPerformed
-    ArrayList<Integer> list=new ArrayList<Integer>();
-    ArrayList<Integer> two =new ArrayList<Integer>();
-    ArrayList<String> car=new ArrayList<String>();
-    void set_two(){
-        get_i();
-        for(int j=1;j<=i;j++){
-            two.add(j);
-        }
-    }
-    int i;
-    void get_i(){
-        ResultSet rlt;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection c=DriverManager.getConnection("add your connectin info");
-			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select * from slots ");			
- 				while (rlt.next()) {      
-  					 i=(Integer.parseInt(rlt.getString(1)));                                 
-				}
-		}
-		catch(Exception e){}
-    }
-	void slot_sorter(){
-            set_two();
-        ResultSet rlt;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection c=DriverManager.getConnection("add your connectin info");
-			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select slot_no from entry ");			
- 				while (rlt.next()) {      
-  					 list.add(Integer.parseInt(rlt.getString(1)));                                 
-				}
-		}
-		catch(Exception e){}
-        two.removeAll(list);
-}
-        void get_cars(){
-            ResultSet rlt;
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection c=DriverManager.getConnection("add your connectin info");
-			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select name from rates ");			
- 				while (rlt.next()) {      
-  					 car.add(rlt.getString(1));                                 
-				}
-		}
-		catch(Exception e){}
-        }
-        
+           
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         perma();
         jDialog1.dispose();
@@ -260,64 +318,7 @@ public class entry_form extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
-    String sIs,sIs2;
-    void perma(){
-        String x1,x2,x3,x5,x6;
-        int x4;
-        x1=tf1.getText();
-        x2=tf2.getText();
-        Object sI=cb1.getSelectedItem();
-        if (sI != null)
-			{
-    				sIs = sI.toString();
-                        }
-        x3=sIs;
-        Object sI2=cb2.getSelectedItem();
-        if (sI2 != null)
-			{
-    				sIs2 = sI2.toString();
-                        }
-        x4=Integer.parseInt(sIs2);
-        
-        java.util.Date date = new java.util.Date( );
-            SimpleDateFormat ft =new SimpleDateFormat ("HHmm");
-            SimpleDateFormat fft =new SimpleDateFormat ("yyyy.MM.dd");
-            x5=ft.format(date);
-            x6=fft.format(date);
-        try{
-            Class.forName("add your jdbc Driver");
-            ham=DriverManager.getConnection("add your connectin info");
-            egg=ham.prepareStatement("insert entry value(?,?,?,?,?,?)");
-            egg.setString(1, x1);
-            egg.setString(2, x2);
-            egg.setString(3, x3);
-            egg.setInt(4, x4);
-            egg.setString(5, x5);
-            egg.setString(6, x6);
-            egg.executeUpdate();
-        }
-        catch(Exception e){}  
-    }
     
-  void temp(){
-        try{
-            int s;
-            Object sI2=cb2.getSelectedItem();
-        if (sI2 != null)
-			{
-    				sIs2 = sI2.toString();
-                        }
-        s=Integer.parseInt(sIs2);
-            Class.forName("add your jdbc Driver");
-            dum=DriverManager.getConnection("add your connectin info");
-            dang=dum.prepareStatement("insert into temp(no) values ("+s+")");
-            dang.executeUpdate();
-            
-        }
-        catch(Exception e){} 
-        
-        
-    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jDialog1.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed

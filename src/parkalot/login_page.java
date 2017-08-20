@@ -29,7 +29,27 @@ public class login_page extends javax.swing.JFrame {
         initComponents();
         set_focus();
     }
-
+    String x1,x2,x3;
+    void get_pass(){
+        x1=tf1.getText();
+        x2=pf1.getText();
+        ResultSet res;
+        try{
+            Class.forName("add your jdbc Driver");
+            con=DriverManager.getConnection("add your connectin info");
+            Statement stat=con.createStatement();
+            res=stat.executeQuery("select pass from user_details where login='"+x1+"'");
+            while(res.next()){
+				x3=res.getString(1);
+            }    
+        }
+        catch(Exception e){}     
+    }
+    void set_focus(){
+        tf1.setText("Enter Username");
+        pf1.setText("Enter Password");
+        jButton2.requestFocusInWindow();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,27 +171,6 @@ public class login_page extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    String x1,x2,x3;
-    void get_pass(){
-        x1=tf1.getText();
-        x2=pf1.getText();
-        ResultSet res;
-        try{
-            Class.forName("add your jdbc Driver");
-            con=DriverManager.getConnection("add your connectin info");
-            Statement stat=con.createStatement();
-            res=stat.executeQuery("select pass from user_details where login='"+x1+"'");
-            while(res.next()){
-				x3=res.getString(1);
-            }    
-        }
-        catch(Exception e){}     
-    }
-    void set_focus(){
-        tf1.setText("Enter Username");
-        pf1.setText("Enter Password");
-        jButton2.requestFocusInWindow();
-    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         get_pass();
         if(x2.equals(x3)){
