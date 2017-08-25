@@ -16,6 +16,8 @@
  */
 package parkalot;
 import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 /**
  *
  * @author lll2yu
@@ -27,12 +29,37 @@ public class exit_form extends javax.swing.JFrame {
      * Creates new form exit_form
      */
     public exit_form() {
+        get_cars();
+        add_box();
         initComponents();
+    }
+    ArrayList<String> exCar=new ArrayList<>();
+    void add_box(){
+        cb1.setModel(new DefaultComboBoxModel<>(exCar.toArray(new String[0])));
+        getContentPane().add(cb1);
+        cb1.setBounds(170, 240, 170, 30);
+    }
+    void get_cars(){
+        ResultSet rlt;
+        try{
+			Class.forName("add your jdbc Driver");
+			Connection c=DriverManager.getConnection("add your connectin info");
+			Statement stat=c.createStatement();
+			rlt=stat.executeQuery("Select reg_no from entry ");			
+ 				while (rlt.next()) {      
+  					 exCar.add((rlt.getString(1)));                                 
+				}
+		}
+		catch(Exception e){}
     }
     void tempe(){
         try{
-            String s;
-            s=jTextField1.getText();
+            String s = null;
+            Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				s = sI.toString();
+                        }
             Class.forName("add your jdbc Driver");
             dum=DriverManager.getConnection("add your connectin info");
             dang=dum.prepareStatement("insert into tempe(no) values ('"+s+"')");
@@ -56,7 +83,6 @@ public class exit_form extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -82,7 +108,7 @@ public class exit_form extends javax.swing.JFrame {
             }
         });
         jDialog1.getContentPane().add(jButton2);
-        jButton2.setBounds(70, 90, 80, 29);
+        jButton2.setBounds(70, 90, 80, 25);
 
         jButton3.setText("No");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +132,6 @@ public class exit_form extends javax.swing.JFrame {
         jLabel1.setText("Enter the reg. no. of the vehicle ");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(140, 150, 230, 30);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(170, 240, 160, 30);
 
         jButton1.setText("Checkout");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -230,6 +254,6 @@ public class exit_form extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    private javax.swing.JComboBox<String> cb1 = new javax.swing.JComboBox <String>();
 }

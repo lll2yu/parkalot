@@ -257,7 +257,7 @@ public class entry_form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(200, 480, 170, 29);
+        jButton1.setBounds(200, 480, 170, 25);
 
         jButton2.setText("Reset");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -266,7 +266,7 @@ public class entry_form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(500, 480, 170, 29);
+        jButton2.setBounds(500, 480, 170, 25);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel7);
