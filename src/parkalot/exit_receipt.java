@@ -318,10 +318,10 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        empty_table();
         new exit_form().setVisible(true);
         fill_record();
         dispose();
-        empty_table();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
