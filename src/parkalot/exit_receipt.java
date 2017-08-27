@@ -167,7 +167,7 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
         try{
             Class.forName("add your jdbc Driver ");
             Connection ham=DriverManager.getConnection("add your connectin info");
-            PreparedStatement egg=ham.prepareStatement("insert record value(?,?,?,?,?,?,?,?)");
+            PreparedStatement egg=ham.prepareStatement("insert into record value(?,?,?,?,?,?,?,?)");
             egg.setString(1, x1);
             egg.setString(2, x2);
             egg.setString(3, x3);
@@ -319,8 +319,8 @@ public class exit_receipt extends javax.swing.JFrame implements Printable{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         empty_table();
-        new exit_form().setVisible(true);
         fill_record();
+        new exit_form().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
