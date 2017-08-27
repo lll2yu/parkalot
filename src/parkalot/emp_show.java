@@ -54,47 +54,36 @@ public class emp_show extends javax.swing.JFrame {
 		}
 		catch(Exception e){}
 }
-    
-    void get_details(){
-        String name = null;
-        Object sI=cb1.getSelectedItem();
-        if (sI != null)
-			{
-    				name= sI.toString();
-                        }
+    String name;
+    public ArrayList<forEmp> forEmp(){
+        ArrayList<forEmp> elist=new ArrayList<>();
         ResultSet rlt;
         try{
 			Class.forName("add your jdbc Driver");
 			Connection c=DriverManager.getConnection("add your connectin info");
 			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select fname from user_details where login='"+name+"'");     
-  					while(rlt.next()){
-                                            ep1.setText((rlt.getString(1)));
-                                        }
+			rlt=stat.executeQuery("Select * from user_details where login= '"+name+"'");	
+                        forEmp tlist;
+ 				while (rlt.next()) {      
+  					 tlist=new forEmp(rlt.getString("fname"),rlt.getString("login"),rlt.getString("address"),rlt.getString("pass"));                                 
+                                         elist.add(tlist);
+				}
 		}
 		catch(Exception e){}
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection c=DriverManager.getConnection("add your connectin info");
-			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select address from user_details where login='"+name+"'");     
-  					while(rlt.next()){
-                                            ep3.setText((rlt.getString(1)));
-                                        }
-		}
-		catch(Exception e){}
-        try{
-			Class.forName("add your jdbc Driver");
-			Connection c=DriverManager.getConnection("add your connectin info");
-			Statement stat=c.createStatement();
-			rlt=stat.executeQuery("Select pass from user_details where login='"+name+"'");     
-  					while(rlt.next()){
-                                            ep4.setText((rlt.getString(1)));
-                                        }
-		}
-		catch(Exception e){}
-        ep2.setText(name);
-}
+        return elist;
+    }
+    public void draw_Table(){
+        ArrayList<forEmp> nlist=forEmp();
+        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[5];
+        for(int i=0;i<nlist.size();i++){
+            row[0]=nlist.get(i).fname();
+            row[1]=nlist.get(i).login();
+            row[2]=nlist.get(i).address();
+            row[3]=nlist.get(i).pass();
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,10 +100,6 @@ public class emp_show extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        ep1 = new javax.swing.JLabel();
-        ep2 = new javax.swing.JLabel();
-        ep3 = new javax.swing.JLabel();
-        ep4 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
@@ -140,7 +125,7 @@ public class emp_show extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(80, 400, 750, 23);
+        jScrollPane1.setBounds(80, 400, 750, 130);
 
         jButton1.setText("Get Info");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +134,7 @@ public class emp_show extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(420, 280, 100, 29);
+        jButton1.setBounds(420, 280, 100, 25);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 14)); // NOI18N
         jLabel1.setText("Display Information of Employees");
@@ -163,14 +148,6 @@ public class emp_show extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/if_group_318580.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(440, 30, 48, 48);
-        getContentPane().add(ep1);
-        ep1.setBounds(80, 450, 180, 30);
-        getContentPane().add(ep2);
-        ep2.setBounds(270, 450, 180, 30);
-        getContentPane().add(ep3);
-        ep3.setBounds(460, 450, 180, 30);
-        getContentPane().add(ep4);
-        ep4.setBounds(650, 450, 180, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/frame_bg.png"))); // NOI18N
         getContentPane().add(jLabel4);
@@ -194,7 +171,12 @@ public class emp_show extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        get_details();
+        Object sI=cb1.getSelectedItem();
+        if (sI != null)
+			{
+    				name= sI.toString();
+                        }
+        draw_Table();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -238,10 +220,6 @@ public class emp_show extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ep1;
-    private javax.swing.JLabel ep2;
-    private javax.swing.JLabel ep3;
-    private javax.swing.JLabel ep4;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
