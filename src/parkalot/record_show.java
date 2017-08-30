@@ -16,6 +16,7 @@
  */
 package parkalot;
 
+import java.awt.Component;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -327,14 +328,8 @@ public class record_show extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(s4.equals("Records")){
-            getContentPane().remove(jTable1);
-            getContentPane().remove(jScrollPane1);
-        }
-        else{
-        getContentPane().remove(jTable2);
-        getContentPane().remove(jScrollPane2);
-        }
+        Component componentAt = getContentPane().getComponentAt(10, 330);
+        getContentPane().remove(componentAt);
         getContentPane().repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
 
