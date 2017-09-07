@@ -119,7 +119,7 @@ public class entry_form extends javax.swing.JFrame {
         
         java.util.Date date = new java.util.Date( );
             SimpleDateFormat ft =new SimpleDateFormat ("HHmm");
-            SimpleDateFormat fft =new SimpleDateFormat ("yyyy.MM.dd");
+            SimpleDateFormat fft =new SimpleDateFormat ("dd.MM.yyyy");
             x5=ft.format(date);
             x6=fft.format(date);
         try{
